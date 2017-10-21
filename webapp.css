@@ -1,0 +1,25 @@
+
+table {    
+    padding: 5px 0px;
+}
+
+th, td {
+    border: 2px solid black;
+    padding: 35px 45px;
+    background: lightblue;
+}
+
+[class] {
+	font-size: 30px;
+	font-family: 'Acme', sans-serif;
+}
+
+[class="tile9"] {
+	background: white;
+	visibility: hidden;
+}
+
+[class]:hover {
+	color: yellow;
+
+}

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<title>Sliding Puzzle</title>
+	<script type="text/javascript" src="webapp.js"></script>
+	<link rel="stylesheet" type="text/css" href="webapp.css">
+	<link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
+
+</head>
+<body>
+	<h1>Sliding Puzzle</h1>
+
+	<table>
+		
+		<!--<figure class="SlidingPuzzle"> -->
+
+		<tr id = "row1">
+	    <td class="tile1">1</td>
+	    <td class="tile2">2</td>
+	    <td class="tile3">3</td>
+	  	</tr>
+
+	  	<tr id = "row2">
+	    <td class="tile4">4</td>
+	    <td class="tile5">5</td>
+	    <td class="tile6">6</td>
+	  	</tr>
+
+	  	<tr id = "row3">
+	    <td class="tile7">7</td>
+	    <td class="tile8">8</td>
+	    <td class="tile9">9</td>
+	  	</tr>
+
+	</table>
+
+	<p>Moves: <em> -- Done!!!</em></p>
+	<p>Start Time:</p>
+	<p>End Time:</p>
+
+	<button onclick="tiles()">RESTART GAME</button>
+
+		
+		<script>
+			function tiles() {
+				let arr1 = [];
+				let tr1 = document.getElementById('row1');
+				let tr2 = document.getElementById('row2');
+				let tr3 = document.getElementById('row3');
+			    for (i = 0; i < 9; i++) {
+			    arr1[i] = ('<td class="tile' + (i+1) + '">' + (i+1) + '</td>');
+			    arr1.push(arr1[i]);
+			    }
+			    arr1.pop();
+			    arr2 = arr1;
+
+			    let newarr = [];
+			    for (j = 0; j < 9; j++) {
+			    	k = parseInt(Math.random() * arr2.length);
+			    	element = arr2.splice(k, 1);
+			    	newarr.push(element[0]);
+			    }
+			    tr1.innerHTML = newarr[0]+newarr[1]+newarr[2];
+			    tr2.innerHTML = newarr[3]+newarr[4]+newarr[5];
+			    tr3.innerHTML = newarr[6]+newarr[7]+newarr[8];
+			    //document.getElementsByClass("tile7") = "newarr";
+			    // for (l = 0; l < 9; l++) {
+			    // return (tile + "i + 1").td = newarr[i];
+			}
+				//console.log(tiles([]));
+
+		// function tiles(arr1) {
+
+		//     for (i = 0; i < 9; i++) {
+		//     arr1[i] = ('<td class="tile' + (i+1) + '">' + (i+1) + '</td>');
+		//     arr1.push(arr1[i]);
+		//     }
+		//     arr1.pop();
+		//     arr2 = arr1;
+		//     return arr2;
+		// }
+		// console.log(tiles([]));
+
+		// function new_tiles(arr2) {
+
+		//     newarr = [];
+		//     for (j = 0; j < 9; j++) {
+		//         k = parseInt(Math.random() * arr2.length);
+		//         element = arr2.splice(k, 1);
+		//         newarr.push(element[0]);
+		//     }
+		//     return newarr;
+		// }
+		// console.log(tiles(arr2));
+
+		</script>
+
+		<!-- <script type="text/javascript">
+			
+			function step1() {
+				let bingo = "<td class="tile9">9</td>";
+				//let b = bingo.substring(15,15);
+				let tr1 = document.getElementById('row1');
+				let tr2 = document.getElementById('row2');
+				
+				if (newarr[1] == bingo){
+					tr1.innerHTML = newarr[1]+newarr[0]+newarr[2];
+				} else if (newarr[3] == bingo) {
+					tr1.innerHTML = newarr[3]+newarr[1]+newarr[2];
+					tr2.innerHTML = newarr[0]+newarr[4]+newarr[5];
+				}
+			}
+		</script> -->
+
+</body>
+</html>
